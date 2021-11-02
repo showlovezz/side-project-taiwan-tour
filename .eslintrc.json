@@ -1,0 +1,68 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "node": true,
+    "es6": true
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended", "standard"],
+  "parserOptions": {
+    "ecmaVersion": 7,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "globals": {},
+  "plugins": ["react", "react-hooks"],
+  "rules": {
+    "function-call-argument-newline": ["error", "consistent"],
+    "linebreak-style": ["error", "unix"],
+    "indent": [
+      "error",
+      2,
+      {
+        "MemberExpression": 1,
+        "SwitchCase": 1
+      }
+    ],
+    "jsx-quotes": ["error", "prefer-single"],
+    "no-console": "warn",
+    "no-empty-function": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/rules-of-hooks": "error",
+    "react/jsx-tag-spacing": [
+      "error",
+      {
+        "closingSlash": "never",
+        "beforeSelfClosing": "always",
+        "afterOpening": "never",
+        "beforeClosing": "never"
+      }
+    ],
+    "standard/no-callback-literal": "off",
+    "comma-dangle": ["error", "always-multiline"],
+    "space-before-function-paren": [
+      "error",
+      {
+        "anonymous": "always",
+        "named": "never",
+        "asyncArrow": "always"
+      }
+    ],
+    "operator-linebreak": ["error", "after"],
+    "camelcase": "off"
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/__mocks__/**/*.js"
+      ],
+      "rules": {
+        "no-undef": "off",
+        "no-console": "off"
+      }
+    }
+  ]
+}
