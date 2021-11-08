@@ -1,0 +1,33 @@
+.card-item {
+  &__img {
+    width: 100%;
+    height: 233px;
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+  }
+
+  &__marker {
+    color: #e56f47;
+    margin-right: 4px;
+  }
+
+  &__address {
+    color: #6c757d;
+    font-size: 13px;
+  }
+
+  &__link {
+    text-align: center;
+    width: 100%;
+    display: block;
+    text-decoration: none;
+    color: #e56f47;
+
+    &:hover {
+      color: #e56f47;
+    }
+  }
+}

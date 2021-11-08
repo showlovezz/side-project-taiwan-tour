@@ -1,0 +1,14 @@
+.main-advance {
+  background-image: url(../../assets/images/main-advance.jpg);
+  background-size: cover;
+  height: 500px;
+  padding: 50px;
+  margin-bottom: 10px;
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+}
