@@ -4,13 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
-    <Navbar
-      collapseOnSelect
-      expand='md'
-      bg='primary'
-      variant='dark'
-      sticky='top'
-    >
+    <Navbar collapseOnSelect expand='md'>
       <Container>
         <Link to='/' className='navbar-brand'>
           台灣好好
