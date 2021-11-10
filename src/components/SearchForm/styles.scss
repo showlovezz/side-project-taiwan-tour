@@ -1,0 +1,14 @@
+.search-form {
+  margin-top: 46px;
+  background-color: rgb(253, 252, 252);
+
+  &__input {
+    padding: 0 10px;
+  }
+
+  &__input,
+  &__select {
+    width: 100%;
+    height: 38px;
+  }
+}
