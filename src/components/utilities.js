@@ -4,28 +4,6 @@ import jsSHA from 'jssha'
 import { AppID, AppKey } from '../apiKey'
 
 /**
- * Ellipsis Description
- * @param {string} str
- * @returns {string}
- */
-export const ellipsisDescription = (str) => {
-  if (typeof str !== 'string') String(str)
-
-  return str.length > 35 ? `${str.substr(0, 43)} ...` : str
-}
-
-/**
- * Ellipsis Name
- * @param {string} str
- * @returns {string}
- */
-export const ellipsisName = (str) => {
-  if (typeof str !== 'string') String(str)
-
-  return str.length > 20 ? `${str.substr(0, 30)} ...` : str
-}
-
-/**
  * Ellipsis Img
  * @param {string} imgValue
  * @returns {string}
@@ -34,6 +12,39 @@ export const ellipsisImg = (imgValue) => {
   if (!imgValue) return 'https://fakeimg.pl/414x233/'
 
   return imgValue
+}
+
+/**
+ * Ellipsis Name
+ * @param {string} str
+ * @returns {string}
+ */
+export const ellipsisName = (str = '詳見官網') => {
+  if (typeof str !== 'string') String(str)
+
+  return str.length > 18 ? `${str.substr(0, 13)} ...` : str
+}
+
+/**
+ * Ellipsis Description
+ * @param {string} str
+ * @returns {string}
+ */
+export const ellipsisDescription = (str = '詳見官網') => {
+  if (typeof str !== 'string') String(str)
+
+  return str.length > 35 ? `${str.substr(0, 43)} ...` : str
+}
+
+/**
+ * Ellipsis Location
+ * @param {string} str
+ * @returns {string}
+ */
+export const ellipsisLocation = (str = '詳見官網') => {
+  if (typeof str !== 'string') String(str)
+
+  return str.length > 20 ? `${str.substr(0, 20)} ...` : str
 }
 
 /**

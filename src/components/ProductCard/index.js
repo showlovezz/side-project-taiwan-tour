@@ -6,7 +6,7 @@ import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
 
 import './styles.scss'
 
-const ProductCard = ({ name, updateTime, picture, place }) => {
+const ProductCard = ({ picture, name, place, updateTime }) => {
   return (
     <Card className='mb-3 card-item'>
       <Card.Img variant='top' src={picture} className='card-item__img ' />
