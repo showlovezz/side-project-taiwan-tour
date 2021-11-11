@@ -1,6 +1,6 @@
 export const cityOptions = [
   {
-    label: '請選擇',
+    label: '請選擇縣市',
     value: '',
   },
   {
@@ -95,7 +95,7 @@ export const cityOptions = [
 
 export const categoryOptions = [
   {
-    label: '請選擇',
+    label: '請選擇尋找類型',
     value: '',
   },
   {
