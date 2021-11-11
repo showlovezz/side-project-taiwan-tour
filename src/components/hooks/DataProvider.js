@@ -10,6 +10,7 @@ const DataProvider = ({ children }) => {
   const [activities, setActivities] = useState([])
   const [restaurants, setRestaurants] = useState([])
   const [hotels, setHotels] = useState([])
+  const [currentItems, setCurrentItems] = useState(null)
 
   return (
     <DataContext.Provider
@@ -24,6 +25,8 @@ const DataProvider = ({ children }) => {
         setRestaurants,
         hotels,
         setHotels,
+        currentItems,
+        setCurrentItems,
       }}
     >
       {children}
