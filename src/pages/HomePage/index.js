@@ -5,7 +5,6 @@ import Loading from '../../components/Loading'
 import ProductCollection from '../../components/ProductCollection'
 import HomeCarousel from '../../components/HomeCarousel'
 import { useDataContext } from '../../components/hooks/DataProvider'
-import SearchForm from '../../components/SearchForm'
 
 import {
   fetchHomePageTours,
@@ -53,10 +52,7 @@ const HomePage = () => {
       <HomeCarousel />
       <Container>
         <Row>
-          <Col md={3}>
-            <SearchForm />
-          </Col>
-          <Col md={9}>
+          <Col md={12}>
             {loading ? (
               <Loading />
             ) : (
