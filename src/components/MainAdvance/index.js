@@ -80,6 +80,12 @@ MySelect.propTypes = {
 }
 
 const MainAdvance = () => {
+  const navigate = useNavigate()
+  const handleSubmit = useCallback((values, { setSubmitting }) => {
+    if (values.category === 'ScenicSpot') {
+      navigate('/taiwan-tours')
+      // return <Link to='/taiwan-tours' target='_blank' />
+    }
   // const formik = useFormik({
   //   initialValues: {
   //     city: '',
