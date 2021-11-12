@@ -32,7 +32,7 @@ export const fetchKeyWordWithCityActivities = (keyWord, city) => {
   if (!keyWord || !city) return Promise.reject(new Error('miss_options'))
 
   return Axios.get(
-    `https://ptx.transportdata.tw/MOTC/v2/Tourism/Activity/${city}?$format=JSON&$filter=contains(Name, '${keyWord}')`,
+    `https://ptx.transportdata.tw/MOTC/v2/Tourism/Activity/${city}?$format=JSON&$filter=contains(Name, '${keyWord}') or contains(Description, '${keyWord}')`,
     { headers: getAuthorizationHeader() },
   )
     .then((response) => {
@@ -72,7 +72,7 @@ export const fetchKeyWordActivities = (keyWord) => {
   if (!keyWord) return Promise.reject(new Error('miss_options'))
 
   return Axios.get(
-    `https://ptx.transportdata.tw/MOTC/v2/Tourism/Activity/?&$format=JSON&$filter=contains(Name, '${keyWord}') or contains(Description, '${keyWord}')`,
+    `https://ptx.transportdata.tw/MOTC/v2/Tourism/Activity/?&$format=JSON&$filter=contains(Name, '${keyWord}') or contains(Description, '${keyWord}') or contains(Particpation, '${keyWord}')`,
     { headers: getAuthorizationHeader() },
   )
     .then((response) => {
