@@ -1,8 +1,6 @@
 // @ts-check
 import jsSHA from 'jssha'
 
-import { AppID, AppKey } from '../apiKey'
-
 /**
  * Ellipsis Img
  * @param {string} imgValue
@@ -53,6 +51,8 @@ export const ellipsisLocation = (str = '詳見官網') => {
  */
 export const getAuthorizationHeader = () => {
   // TODO
+  const AppID = process.env.REACT_APP_APPID
+  const AppKey = process.env.REACT_APP_APPKEY
   // @ts-ignore
   const GMTString = new Date().toGMTString()
   // eslint-disable-next-line new-cap

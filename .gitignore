@@ -24,3 +24,8 @@ yarn-error.log*
 
 # API Key
 src/apiKey.js
+
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
