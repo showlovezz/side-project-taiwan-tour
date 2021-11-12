@@ -44,7 +44,7 @@ const SearchForm = () => {
   )
 
   return (
-    <section className='tours-page__search'>
+    <section className='restaurants-page__search'>
       <Formik
         initialValues={{ key_word: '', city: '' }}
         validationSchema={validationSchema}
@@ -55,13 +55,16 @@ const SearchForm = () => {
             <Form.Group as={Col}>
               <InputField
                 name='key_word'
-                className='tours-page__search-input'
+                className='restaurants-page__search-input'
               />
             </Form.Group>
           </Row>
           <Row className='mb-3'>
             <Form.Group as={Col}>
-              <SelectField name='city' className='tours-page__search-select'>
+              <SelectField
+                name='city'
+                className='restaurants-page__search-select'
+              >
                 {cityOptions.map(({ label, value }, index) => {
                   return (
                     <option key={index} value={value}>
