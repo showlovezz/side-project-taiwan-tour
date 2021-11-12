@@ -32,7 +32,7 @@ export const fetchKeyWordWithCityRestaurants = (keyWord, city) => {
   if (!keyWord || !city) return Promise.reject(new Error('miss_options'))
 
   return Axios.get(
-    `https://ptx.transportdata.tw/MOTC/v2/Tourism/Restaurant/${city}?$format=JSON&$filter=contains(Name, '${keyWord}')`,
+    `https://ptx.transportdata.tw/MOTC/v2/Tourism/Restaurant/${city}?$format=JSON&$filter=contains(Name, '${keyWord}') or contains(Description, '${keyWord}')`,
     { headers: getAuthorizationHeader() },
   )
     .then((response) => {
