@@ -1,4 +1,3 @@
-// @ts-check
 import jsSHA from 'jssha'
 
 /**
@@ -53,7 +52,6 @@ export const getAuthorizationHeader = () => {
   // TODO
   const AppID = process.env.REACT_APP_APPID
   const AppKey = process.env.REACT_APP_APPKEY
-  // @ts-ignore
   const GMTString = new Date().toGMTString()
   // eslint-disable-next-line new-cap
   const ShaObj = new jsSHA('SHA-1', 'TEXT')
