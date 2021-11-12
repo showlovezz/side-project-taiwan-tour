@@ -1,4 +1,4 @@
-import jsSHA from 'jssha'
+import jsSHA from 'jssha/dist/sha1'
 
 /**
  * Ellipsis Img
