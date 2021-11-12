@@ -32,7 +32,7 @@ export const fetchKeyWordWithCityTours = (keyWord, city) => {
   if (!keyWord || !city) return Promise.reject(new Error('miss_options'))
 
   return Axios.get(
-    `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot/${city}?$format=JSON&$filter=contains(Name, '${keyWord}')`,
+    `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot/${city}?$format=JSON&$filter=contains(Name, '${keyWord}') or contains(DescriptionDetail, '${keyWord}')`,
     { headers: getAuthorizationHeader() },
   )
     .then((response) => {
