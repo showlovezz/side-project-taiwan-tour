@@ -35,9 +35,8 @@ const SearchForm = () => {
           setActivities(res)
           setLoading(false)
         })
-        .catch((error) => {
+        .catch(() => {
           setSubmitting(false)
-          console.log(error)
         })
     },
     [setLoading, setActivities],

@@ -35,9 +35,8 @@ const SearchForm = () => {
           setTours(res)
           setLoading(false)
         })
-        .catch((error) => {
+        .catch(() => {
           setSubmitting(false)
-          console.log(error)
         })
     },
     [setLoading, setTours],

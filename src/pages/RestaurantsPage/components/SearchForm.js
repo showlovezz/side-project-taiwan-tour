@@ -35,9 +35,8 @@ const SearchForm = () => {
           setRestaurants(restaurants)
           setLoading(false)
         })
-        .catch((error) => {
+        .catch(() => {
           setSubmitting(false)
-          console.log(error)
         })
     },
     [setLoading, setRestaurants],

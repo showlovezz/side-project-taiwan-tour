@@ -43,7 +43,7 @@ const HomePage = () => {
         setLoading(false)
       })
       .catch((error) => {
-        console.log(error)
+        throw error
       })
   }, [setLoading, setTours, setActivities, setRestaurants, setHotels])
 
