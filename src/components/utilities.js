@@ -1,4 +1,4 @@
-import jsSHA from 'jssha/dist/sha1'
+import * as jsSHA from 'jssha'
 
 /**
  * Ellipsis Img
@@ -54,7 +54,7 @@ export const getAuthorizationHeader = () => {
   const AppKey = process.env.REACT_APP_APPKEY
   const GMTString = new Date().toGMTString()
   // eslint-disable-next-line new-cap
-  const ShaObj = new jsSHA('SHA-1', 'TEXT')
+  const ShaObj = new jsSHA.default('SHA-1', 'TEXT')
   ShaObj.setHMACKey(AppKey, 'TEXT')
   ShaObj.update(`x-date: ${GMTString}`)
   const HMAC = ShaObj.getHMAC('B64')
