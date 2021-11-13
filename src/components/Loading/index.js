@@ -1,16 +1,16 @@
-import React from 'react'
-import { Spinner } from 'react-bootstrap'
+import React from 'react';
+import { Spinner } from 'react-bootstrap';
 
-import './styles.scss'
+import './styles.scss';
 
 const Loading = () => {
   return (
-    <section className='loading'>
-      <Spinner animation='border' role='status'>
-        <span className='visually-hidden'>Loading...</span>
+    <section className="loading">
+      <Spinner animation="border" role="status">
+        <span className="visually-hidden">Loading...</span>
       </Spinner>
     </section>
-  )
-}
+  );
+};
 
-export default Loading
+export default Loading;

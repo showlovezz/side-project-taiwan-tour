@@ -91,7 +91,7 @@ export const cityOptions = [
     label: '連江縣',
     value: 'LienchiangCounty',
   },
-]
+];
 
 export const categoryOptions = [
   {
@@ -114,4 +114,4 @@ export const categoryOptions = [
     label: '優質住宿',
     value: 'Hotel',
   },
-]
+];

@@ -1,20 +1,20 @@
-import React, { Suspense } from 'react'
-import { Route, Routes } from 'react-router-dom'
+import React, { Suspense } from 'react';
+import { Route, Routes } from 'react-router-dom';
 
-import routes from '../../routes'
+import routes from '../../routes';
 
 const RouterView = () => {
   return (
-    <Suspense fallback='Loading ...'>
+    <Suspense fallback="Loading ...">
       <Routes>
         {routes.map((route, index) => {
-          if (!route.element) return null
+          if (!route.element) return null;
 
-          return <Route key={index} path={route.path} element={route.element} />
+          return <Route key={index} path={route.path} element={route.element} />;
         })}
       </Routes>
     </Suspense>
-  )
-}
+  );
+};
 
-export default RouterView
+export default RouterView;

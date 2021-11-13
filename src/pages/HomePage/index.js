@@ -1,17 +1,12 @@
-import React, { useEffect } from 'react'
-import { Container, Row, Col } from 'react-bootstrap'
+import React, { useEffect } from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 
-import Loading from '../../components/Loading'
-import ProductCollection from '../../components/ProductCollection'
-import HomeCarousel from '../../components/HomeCarousel'
-import { useDataContext } from '../../components/hooks/DataProvider'
+import Loading from '../../components/Loading';
+import ProductCollection from '../../components/ProductCollection';
+import HomeCarousel from '../../components/HomeCarousel';
+import { useDataContext } from '../../components/hooks/DataProvider';
 
-import {
-  fetchHomePageTours,
-  fetchHomePageActivities,
-  fetchHomePageRestaurants,
-  fetchHomePageHotels,
-} from './api'
+import { fetchHomePageTours, fetchHomePageActivities, fetchHomePageRestaurants, fetchHomePageHotels } from './api';
 
 const HomePage = () => {
   const {
@@ -25,10 +20,10 @@ const HomePage = () => {
     setRestaurants,
     hotels,
     setHotels,
-  } = useDataContext()
+  } = useDataContext();
 
   useEffect(() => {
-    setLoading(true)
+    setLoading(true);
     Promise.all([
       fetchHomePageTours(3),
       fetchHomePageActivities(3),
@@ -36,16 +31,16 @@ const HomePage = () => {
       fetchHomePageHotels(3),
     ])
       .then(([tours, activities, restaurants, hotels]) => {
-        setTours(tours)
-        setActivities(activities)
-        setRestaurants(restaurants)
-        setHotels(hotels)
-        setLoading(false)
+        setTours(tours);
+        setActivities(activities);
+        setRestaurants(restaurants);
+        setHotels(hotels);
+        setLoading(false);
       })
-      .catch((error) => {
-        throw error
-      })
-  }, [setLoading, setTours, setActivities, setRestaurants, setHotels])
+      .catch(error => {
+        throw error;
+      });
+  }, [setLoading, setTours, setActivities, setRestaurants, setHotels]);
 
   return (
     <>
@@ -57,37 +52,27 @@ const HomePage = () => {
               <Loading />
             ) : (
               <>
+                <ProductCollection title="推薦景點" btnText="看更多景點" data={tours} urlLink="/taiwan-tours" />
                 <ProductCollection
-                  title='推薦景點'
-                  btnText='看更多景點'
-                  data={tours}
-                  urlLink='/taiwan-tours'
-                />
-                <ProductCollection
-                  title='最新活動'
-                  btnText='看更多活動'
+                  title="最新活動"
+                  btnText="看更多活動"
                   data={activities}
-                  urlLink='/taiwan-activities'
+                  urlLink="/taiwan-activities"
                 />
                 <ProductCollection
-                  title='就要吃美食'
-                  btnText='尋找更多美食'
+                  title="就要吃美食"
+                  btnText="尋找更多美食"
                   data={restaurants}
-                  urlLink='/taiwan-restaurants'
+                  urlLink="/taiwan-restaurants"
                 />
-                <ProductCollection
-                  title='優質住宿'
-                  btnText='尋找更多住宿'
-                  data={hotels}
-                  urlLink='/taiwan-hotels'
-                />
+                <ProductCollection title="優質住宿" btnText="尋找更多住宿" data={hotels} urlLink="/taiwan-hotels" />
               </>
             )}
           </Col>
         </Row>
       </Container>
     </>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;

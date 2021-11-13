@@ -1,15 +1,15 @@
-import * as jsSHA from 'jssha'
+import * as jsSHA from 'jssha';
 
 /**
  * Ellipsis Img
  * @param {string} imgValue
  * @returns {string}
  */
-export const ellipsisImg = (imgValue) => {
-  if (!imgValue) return 'https://fakeimg.pl/414x233/'
+export const ellipsisImg = imgValue => {
+  if (!imgValue) return 'https://fakeimg.pl/414x233/';
 
-  return imgValue
-}
+  return imgValue;
+};
 
 /**
  * Ellipsis Name
@@ -17,10 +17,10 @@ export const ellipsisImg = (imgValue) => {
  * @returns {string}
  */
 export const ellipsisName = (str = '詳見官網') => {
-  if (typeof str !== 'string') String(str)
+  if (typeof str !== 'string') String(str);
 
-  return str.length > 18 ? `${str.substr(0, 13)} ...` : str
-}
+  return str.length > 18 ? `${str.substr(0, 13)} ...` : str;
+};
 
 /**
  * Ellipsis Description
@@ -28,10 +28,10 @@ export const ellipsisName = (str = '詳見官網') => {
  * @returns {string}
  */
 export const ellipsisDescription = (str = '詳見官網') => {
-  if (typeof str !== 'string') String(str)
+  if (typeof str !== 'string') String(str);
 
-  return str.length > 35 ? `${str.substr(0, 43)} ...` : str
-}
+  return str.length > 35 ? `${str.substr(0, 43)} ...` : str;
+};
 
 /**
  * Ellipsis Location
@@ -39,10 +39,10 @@ export const ellipsisDescription = (str = '詳見官網') => {
  * @returns {string}
  */
 export const ellipsisLocation = (str = '詳見官網') => {
-  if (typeof str !== 'string') String(str)
+  if (typeof str !== 'string') String(str);
 
-  return str.length > 20 ? `${str.substr(0, 20)} ...` : str
-}
+  return str.length > 20 ? `${str.substr(0, 20)} ...` : str;
+};
 
 /**
  * Validation AppID & AppKey
@@ -50,16 +50,16 @@ export const ellipsisLocation = (str = '詳見官網') => {
  */
 export const getAuthorizationHeader = () => {
   // TODO
-  const AppID = process.env.REACT_APP_APPID
-  const AppKey = process.env.REACT_APP_APPKEY
-  const GMTString = new Date().toGMTString()
+  const AppID = process.env.REACT_APP_APPID;
+  const AppKey = process.env.REACT_APP_APPKEY;
+  const GMTString = new Date().toGMTString();
   // eslint-disable-next-line new-cap
-  const ShaObj = new jsSHA.default('SHA-1', 'TEXT')
-  ShaObj.setHMACKey(AppKey, 'TEXT')
-  ShaObj.update(`x-date: ${GMTString}`)
-  const HMAC = ShaObj.getHMAC('B64')
+  const ShaObj = new jsSHA.default('SHA-1', 'TEXT');
+  ShaObj.setHMACKey(AppKey, 'TEXT');
+  ShaObj.update(`x-date: ${GMTString}`);
+  const HMAC = ShaObj.getHMAC('B64');
   // eslint-disable-next-line no-useless-escape
-  const Authorization = `hmac username=\"${AppID}\", algorithm=\"hmac-sha1\", headers=\"x-date\", signature=\"${HMAC}\"`
+  const Authorization = `hmac username=\"${AppID}\", algorithm=\"hmac-sha1\", headers=\"x-date\", signature=\"${HMAC}\"`;
 
-  return { Authorization, 'X-Date': GMTString }
-}
+  return { Authorization, 'X-Date': GMTString };
+};

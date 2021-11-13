@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-import './assets/scss/app.scss'
-import Header from './components/Header'
-import RouterView from './components/RouterView'
-import DataProvider from './components/hooks/DataProvider'
+import './assets/scss/app.scss';
+import Header from './components/Header';
+import RouterView from './components/RouterView';
+import DataProvider from './components/hooks/DataProvider';
 
 const App = () => {
   return (
@@ -11,7 +11,7 @@ const App = () => {
       <Header />
       <RouterView />
     </DataProvider>
-  )
-}
+  );
+};
 
-export default App
+export default App;

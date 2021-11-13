@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 
-const HomePage = React.lazy(() => import('./pages/HomePage'))
-const ToursPage = React.lazy(() => import('./pages/ToursPage'))
-const ActivitiesPage = React.lazy(() => import('./pages/ActivitiesPage'))
-const RestaurantsPage = React.lazy(() => import('./pages/RestaurantsPage'))
-const HotelsPage = React.lazy(() => import('./pages/HotelsPage'))
+const HomePage = React.lazy(() => import('./pages/HomePage'));
+const ToursPage = React.lazy(() => import('./pages/ToursPage'));
+const ActivitiesPage = React.lazy(() => import('./pages/ActivitiesPage'));
+const RestaurantsPage = React.lazy(() => import('./pages/RestaurantsPage'));
+const HotelsPage = React.lazy(() => import('./pages/HotelsPage'));
 
 const routes = [
   {
@@ -27,6 +27,6 @@ const routes = [
     path: '/taiwan-hotels',
     element: <HotelsPage />,
   },
-]
+];
 
-export default routes
+export default routes;
