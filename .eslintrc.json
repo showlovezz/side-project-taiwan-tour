@@ -1,7 +1,9 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "node": true,
+    "jest/globals": true
   },
   "extends": [
     "eslint:recommended",
@@ -16,7 +18,12 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "plugins": ["react", "testing-library", "jest"],
   "rules": {
     "prettier/prettier": "warn"
   }

@@ -13,20 +13,8 @@ import { fetchTours } from './api';
 import './styles.scss';
 
 const SearchForm = () => {
-  const {
-    // loading,
-    setLoading,
-    // tours,
-    setTours,
-    // activities,
-    setActivities,
-    // restaurants,
-    setRestaurants,
-    // hotels,
-    setHotels,
-  } = useDataContext();
-
-  const handleSubmit = useCallback((values, { setSubmitting }) => {
+  const { setLoading, setTours, setActivities, setRestaurants, setHotels } = useDataContext();
+  const handleSubmit = useCallback(() => {
     setLoading(true);
     return fetchTours(6).then(res => {
       setTours(res);
@@ -35,10 +23,6 @@ const SearchForm = () => {
       setHotels([]);
       setLoading(false);
     });
-    // setTimeout(() => {
-    //   alert(JSON.stringify(values, null, 2))
-    //   setSubmitting(false)
-    // }, 400)
   }, []);
 
   return (

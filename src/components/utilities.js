@@ -1,3 +1,4 @@
+// @ts-check
 import * as jsSHA from 'jssha';
 
 /**
@@ -49,17 +50,14 @@ export const ellipsisLocation = (str = '詳見官網') => {
  * @returns {{Authorization: string, 'X-Date': string} }
  */
 export const getAuthorizationHeader = () => {
-  // TODO
   const AppID = process.env.REACT_APP_APPID;
   const AppKey = process.env.REACT_APP_APPKEY;
-  const GMTString = new Date().toGMTString();
-  // eslint-disable-next-line new-cap
+  const GMTString = new Date().toUTCString();
   const ShaObj = new jsSHA.default('SHA-1', 'TEXT');
   ShaObj.setHMACKey(AppKey, 'TEXT');
   ShaObj.update(`x-date: ${GMTString}`);
   const HMAC = ShaObj.getHMAC('B64');
-  // eslint-disable-next-line no-useless-escape
-  const Authorization = `hmac username=\"${AppID}\", algorithm=\"hmac-sha1\", headers=\"x-date\", signature=\"${HMAC}\"`;
+  const Authorization = `hmac username="${AppID}", algorithm="hmac-sha1", headers="x-date", signature="${HMAC}"`;
 
   return { Authorization, 'X-Date': GMTString };
 };
