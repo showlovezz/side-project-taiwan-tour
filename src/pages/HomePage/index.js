@@ -6,8 +6,6 @@ import Loading from '../../components/Loading';
 import ProductCollection from '../../components/ProductCollection';
 import { fetchHomePageActivities, fetchHomePageHotels, fetchHomePageRestaurants, fetchHomePageTours } from './api';
 
-const data = str => str;
-
 const HomePage = () => {
   const {
     loading,
