@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-
-import Loading from '../../components/Loading';
-import ProductCollection from '../../components/ProductCollection';
+import { Col, Container, Row } from 'react-bootstrap';
 import HomeCarousel from '../../components/HomeCarousel';
 import { useDataContext } from '../../components/hooks/DataProvider';
+import Loading from '../../components/Loading';
+import ProductCollection from '../../components/ProductCollection';
+import { fetchHomePageActivities, fetchHomePageHotels, fetchHomePageRestaurants, fetchHomePageTours } from './api';
 
-import { fetchHomePageTours, fetchHomePageActivities, fetchHomePageRestaurants, fetchHomePageHotels } from './api';
+const data = str => str;
 
 const HomePage = () => {
   const {

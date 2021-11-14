@@ -1,0 +1,6 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true, // 讓 ESLint 幫忙檢查排版及修復錯誤的 js code
+    "source.organizeImports": true // 排版 Import
+  }
+}
