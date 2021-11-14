@@ -9,7 +9,8 @@
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:prettier/recommended",
-    "eslint-config-prettier"
+    "eslint-config-prettier",
+    "plugin:react-hooks/recommended"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -23,7 +24,7 @@
       "version": "detect"
     }
   },
-  "plugins": ["react", "testing-library", "jest"],
+  "plugins": ["react", "testing-library", "jest", "react-hooks"],
   "rules": {
     "prettier/prettier": "warn"
   }
